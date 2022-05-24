@@ -3,7 +3,8 @@
 
 #include <stdio.h>
 
-typedef int (*fnIniCB)(const char* section, const char* name, const char* value);
-int parse_ini(FILE* file, fnIniCB cb);
+typedef int (*IniCB_Fn)(const char* section, const char* name, const char* value);
+
+int parse_ini(FILE* file, IniCB_Fn cb);
 
 #endif /* __INI_H_ */

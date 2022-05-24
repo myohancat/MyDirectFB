@@ -70,7 +70,11 @@ SRCS      += netutil.cpp
 # Utils 
 INCDIRS   += $(BASE)/utils
 SRCDIRS   += $(BASE)/utils
+SRCS      += trim.cpp
+SRCS      += ini.cpp
 SRCS      += key_value.cpp
+SRCS      += popen2.cpp
+SRCS      += parcel.cpp
 
 ###############################################################################
 # DO NOT MODIFY .......

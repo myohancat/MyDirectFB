@@ -82,6 +82,7 @@ static char** make_args(const char* command)
     return argv;
 }
 
+#if 0
 static void free_args(char** argv)
 {
     int ii;
@@ -93,6 +94,7 @@ static void free_args(char** argv)
     
     free(argv);
 }
+#endif
 
 FILE* popen2(const char *command, const char *type, int* child_pid)
 {

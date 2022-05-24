@@ -27,18 +27,3 @@ char* rtrim(char* s)
 
     return s;
 }
-
-#define TEST_MAIN
-#ifdef TEST_MAIN
-int main(int argc, char* arv[])
-{
-    char testStr[] = "     HaHa   HeHe   ";
-
-    printf("Orginal : \"%s\"\n", testStr);
-    printf("ltrim   : \"%s\"\n", ltrim(testStr));
-    printf("rtrim   : \"%s\"\n", rtrim(testStr));
-    printf("trim    : \"%s\"\n", trim(testStr));
-
-    return 0;
-}
-#endif

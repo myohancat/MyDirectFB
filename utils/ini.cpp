@@ -8,7 +8,7 @@
 #define MAX_SECTION_LEN  (64)
 #define MAX_NAME_LEN     (64)
 
-int parse_ini(FILE* file, fnIniCB cb)
+int parse_ini(FILE* file, IniCB_Fn cb)
 {
     char line[MAX_LINE_LEN];
 
