@@ -155,7 +155,7 @@ bool NetlinkManager::onFdReadable(int fd)
 void NetlinkManager::onTimerExpired(const ITimer* timer)
 {
     // LOG_DEBUG("---- polling to check IP \n");
-    (void)(timer);
+    UNUSED(timer);
 
     // TBD. IMPLEMENTS HERE
 }

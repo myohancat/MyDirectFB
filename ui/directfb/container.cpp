@@ -241,7 +241,7 @@ void Container::setFocus(bool focus)
 void Container::onFocusChanged(bool focus)
 {
     // NOP
-    (void) focus;
+    UNUSED(focus);
 }
 
 void Container::addWidget(IWidget* widget)
@@ -301,13 +301,13 @@ void Container::sendMessage(int id, void* param)
 
 void Container::onMessageReceived(int messageId, void* param)
 {
-    (void)messageId;
-    (void)param;
+    UNUSED(messageId);
+    UNUSED(param);
 }
 
 void Container::onCreateWindow(Window* window)
 {
-    (void)window;
+    UNUSED(window);
 
     if(mContainerListener)
         mContainerListener->onCreate(this);
@@ -315,7 +315,7 @@ void Container::onCreateWindow(Window* window)
 
 void Container::onDestroyWindow(Window* window)
 {
-    (void)window;
+    UNUSED(window);
 
     if(mContainerListener)
         mContainerListener->onDestroy(this);

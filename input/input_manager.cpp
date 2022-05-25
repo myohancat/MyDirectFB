@@ -173,7 +173,7 @@ void InputManager::onTimerExpired(const ITimer* timer)
 {
     int keyValue[2];
 
-    (void)timer;
+    UNUSED(timer);
 
     if (mLastKeyCode == -1)
         return;
