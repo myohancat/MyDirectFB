@@ -24,11 +24,11 @@ __TRACE_FUNC__;
     signal(SIGQUIT, _signal_handler);
     signal(SIGTERM, _signal_handler);
 
-	/* TODO IMPLEMENTS HERE */
+    /* TODO IMPLEMENTS HERE */
 
     while(EventLoop::getInstance().loop()) { }
 
-	/* TODO IMPLEMENTS HERE */
+    /* TODO IMPLEMENTS HERE */
 
     return 0;
 }

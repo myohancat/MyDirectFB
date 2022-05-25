@@ -24,6 +24,13 @@ int socket_set_blocking(int sock, bool block);
 int socket_set_reuseaddr(int sock);
 int socket_set_buffer_size(int sock, int rcvBufSize, int sndBufSize);
 
+/* network information */
+int get_link_state(const char* ifname, bool* isUP);
+int get_mac_addr(const char* ifname, char* mac);
+int get_ip_addr(const char* ifname, char* ip);
+int get_netmask(const char* ifname, char* netmask);
+int get_default_gateway(char* default_gw, char *interface);
+
 } // namespace NetUtil
 
 

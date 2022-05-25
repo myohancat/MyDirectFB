@@ -16,5 +16,8 @@
 #define NULL      ((void*)0)
 #endif /* NULL */
 
+#ifndef UNUSED
+#define UNUSED(x) (void)(x)
+#endif /* UNUSED */
 
 #endif /* __TYPES_H_ */

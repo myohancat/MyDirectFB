@@ -51,6 +51,11 @@ INCDIRS   += $(BASE)/net
 SRCDIRS   += $(BASE)/net
 SRCS      += netutil.cpp
 
+INCDIRS   += $(BASE)/net/ssdp
+SRCDIRS   += $(BASE)/net/ssdp
+SRCS      += ssdp.cpp
+SRCS      += web.cpp
+
 ##################################################
 # WiFi
 #WPA_SUPPLICANT := $(BASE_DIR)/build/wpa_supplicant-2.9

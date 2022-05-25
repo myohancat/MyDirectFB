@@ -7,6 +7,10 @@
 #include <errno.h>
 #include <unistd.h>
 
+#include <net/if.h>
+#include <sys/ioctl.h>
+
+#include "trim.h"
 #include "log.h"
 
 namespace NetUtil
@@ -228,5 +232,140 @@ int socket_set_buffer_size(int sock, int rcvBufSize, int sndBufSize)
     return 0;
 }
 
+int get_link_state(const char* ifname, bool* isUP)
+{
+    FILE* file = NULL;
+    char  path[1024];
+    char  data[1024];
+
+    sprintf(path, "/sys/class/net/%s/operstate", ifname);
+    file = fopen(path, "r");
+    if(!file)
+        return -1;
+
+    memset(data, 0x00, sizeof(data));
+    if(fgets(data, sizeof(data), file) == NULL)
+    {
+        fclose(file);
+        return -2;
+    }
+
+    trim(data);
+    if(strcmp(data, "up") == 0)
+        *isUP = true;
+    else if(strcmp(data, "down") == 0)
+        *isUP = false;
+    else
+    {
+        LOG_ERROR("Unknown state : %s\n", data);
+        fclose(file);
+        return -3;
+    }
+
+    fclose(file);
+
+    return 0;    
+}
+
+
+int get_ip_addr(const char* ifname, char* ipaddr)
+{
+    int fd, ret = 0;
+    struct ifreq req;
+    struct sockaddr_in* sin;
+
+    ipaddr[0] = 0;
+
+    fd = socket(AF_INET, SOCK_DGRAM, 0);
+    if(fd == -1)
+    {
+        LOG_ERROR("cannot oepn socket. !\n");
+        return -1;
+    }
+
+    strncpy(req.ifr_name, ifname, IFNAMSIZ);
+    if(ioctl(fd, SIOCGIFADDR, &req) == 0)
+    {
+        sin = (struct sockaddr_in*)&req.ifr_addr;
+        strcpy(ipaddr, inet_ntoa(sin->sin_addr));
+    }
+    else
+    {
+        LOG_ERROR("cannot found address : %s\n", ifname);
+        ret = -2;
+    }
+
+    close(fd);
+    return ret;
+}
+
+int get_netmask(const char* ifname, char* netmask)
+{
+    int fd, ret = 0;
+    struct ifreq req;
+    struct sockaddr_in* sin;
+
+    netmask[0] = 0;
+
+    fd = socket(AF_INET, SOCK_DGRAM, 0);
+    if(fd == -1)
+    {
+        LOG_ERROR("cannot oepn socket. !\n");
+        return -1;
+    }
+
+    strncpy(req.ifr_name, ifname, IFNAMSIZ);
+    if(ioctl(fd, SIOCGIFNETMASK, &req) == 0)
+    {
+        sin = (struct sockaddr_in*)&req.ifr_netmask;
+        strcpy(netmask, inet_ntoa(sin->sin_addr));
+    }
+    else
+    {
+        LOG_ERROR("cannot found address : %s\n", ifname);
+        ret = -2;
+    }
+
+    close(fd);
+    return ret;
+}
+
+int get_default_gateway(char* default_gw, char *interface)
+{
+    long destination, gateway;
+    char iface[1024];
+    char buf[2*1024];
+    FILE * file;
+
+    memset(iface, 0, sizeof(iface));
+    memset(buf, 0, sizeof(buf));
+
+    file = fopen("/proc/net/route", "r");
+    if(!file)
+        return -1;
+
+    while(fgets(buf, sizeof(buf), file))
+    {
+        if(sscanf(buf, "%s %lx %lx", iface, &destination, &gateway) == 3)
+        {
+            if(destination == 0) /* default */
+            {
+                struct in_addr addr;
+                addr.s_addr = gateway;
+                strcpy(default_gw, inet_ntoa(addr));
+                if(interface)
+                    strcpy(interface, iface);
+
+                fclose(file);
+                return 0;
+            }
+        }
+    }
+
+    if (file)
+        fclose(file);
+
+    return -1;
+}
 
 } // namespace NetUtil
