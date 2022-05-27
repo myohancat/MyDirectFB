@@ -4,9 +4,6 @@
 #include "rectangle.h"
 #include "container.h"
 
-namespace PrazenUI
-{
-
 class Container;
 
 class IWidget
@@ -34,7 +31,5 @@ public:
     virtual void paint(const Rectangle& rect) = 0;
 };
 
-
-} // namespace PrazenUI
 
 #endif /* __WIDGET_H_ */

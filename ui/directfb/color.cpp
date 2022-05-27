@@ -1,8 +1,5 @@
 #include "color.h"
 
-namespace PrazenUI
-{
-
 // Static Definition
 Color Color::RESET(0x00, 0x00, 0x00, 0x00);
 Color Color::WHITE(0xFF, 0xFF, 0xFF, 0xFF);
@@ -62,5 +59,3 @@ bool Color::operator!=(const Color& color) const
     return ((mRed != color.getRed()) || (mGreen != color.getGreen()) || 
             (mBlue != color.getBlue()) || (mAlpha != color.getAlpha()));
 }
-
-} // namespace PrazenUI

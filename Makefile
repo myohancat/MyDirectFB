@@ -72,6 +72,20 @@ SRCS      += web.cpp
 #SRCS      += wifi_manager.cpp
 
 ##################################################
+# UI
+#INCDIRS   += $(BASE)/ui/directfb
+#SRCDIRS   += $(BASE)/ui/directfb
+#SRCS      += font.cpp
+#SRCS      += point.cpp
+#SRCS      += container.cpp
+#SRCS      += window.cpp
+#SRCS      += image.cpp
+#SRCS      += rectangle.cpp
+#SRCS      += color.cpp
+#SRCS      += size.cpp
+#SRCS      += dfb_manager.cpp
+
+##################################################
 # Utils 
 INCDIRS   += $(BASE)/utils
 SRCDIRS   += $(BASE)/utils

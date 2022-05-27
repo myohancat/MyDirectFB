@@ -1,8 +1,5 @@
 #include "size.h"
 
-namespace PrazenUI
-{
-
 Size::Size()
      : mWidth(-1),
        mHeight(-1)
@@ -63,6 +60,3 @@ bool Size::operator!=(const Size& size) const
 {
     return (mWidth != size.mWidth) || (mHeight != size.mHeight);
 }
-
-
-} // namespace PrazenUI

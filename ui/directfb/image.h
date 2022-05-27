@@ -7,9 +7,6 @@
 #include "size.h"
 
 
-namespace PrazenUI
-{
-
 class Image
 {
 public:
@@ -46,7 +43,5 @@ inline std::string Image::getPath() const
 {
     return mPath;
 }
-
-} // namespace PrazenUI
 
 #endif /* __IMAGE_H_ */

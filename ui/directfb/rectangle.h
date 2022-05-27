@@ -4,8 +4,6 @@
 #include "point.h"
 #include "size.h"
 
-namespace PrazenUI
-{
 
 class Rectangle
 {
@@ -154,7 +152,5 @@ inline void Rectangle::setRectangle(const Rectangle& rect)
     mHeight = rect.getHeight();
 }
 
-
-} // namespace PrazenUI
 
 #endif // __RECTANGLE_H_

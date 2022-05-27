@@ -1,9 +1,6 @@
 #include "dfb_manager.h"
 
 
-namespace PrazenUI
-{
-    
 DFBManager& DFBManager::getInstance()
 {
     static DFBManager _instance;
@@ -95,5 +92,3 @@ void DFBManager::deinit()
         mDFB = NULL;
     }
 }
-
-} /* namespace PrazenUI */

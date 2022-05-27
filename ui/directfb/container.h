@@ -13,9 +13,6 @@
 
 #include "widget.h"
 
-namespace PrazenUI 
-{
-
 class Container;
 class IWidget;
 
@@ -248,8 +245,6 @@ inline bool Container::isVisible()
 
     return mWindow->isVisible();
 }
-
-} // namespace PrazenUI
 
 
 #endif // __CONTAINER_H_

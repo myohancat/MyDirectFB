@@ -1,8 +1,5 @@
 #include "point.h"
 
-namespace PrazenUI
-{
-
 Point::Point()
       :mX(-1),
        mY(-1)
@@ -59,5 +56,3 @@ bool   Point::operator!=(const Point& p)
     return (mX != p.mX) && (mY != p.mY);
 }
 
-
-} // PrazenUI

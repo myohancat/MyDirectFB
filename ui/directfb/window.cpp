@@ -3,9 +3,6 @@
 #include "dfb_manager.h"
 #include "log.h"
 
-namespace PrazenUI
-{
-
 Window::Window(int osdLayer, int x, int y, int width, int height, IWindowListener* listener)
            : mDFBWindow(NULL),
              mDFBSurface(NULL),
@@ -377,5 +374,3 @@ void Window::deinit()
         // TODO. IMPLEMENTS HERE
     }
 }
-
-} // namespace PrazenUI

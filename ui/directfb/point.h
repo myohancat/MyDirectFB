@@ -1,9 +1,6 @@
 #ifndef __POINT_H_
 #define __POINT_H_
 
-namespace PrazenUI
-{
-
 class Point
 {
 public:
@@ -35,7 +32,5 @@ inline int Point::getY() const
 {
     return mY;
 }
-
-} // namespace PrazenUI
 
 #endif /* __POINT_H_ */

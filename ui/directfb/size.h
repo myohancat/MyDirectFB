@@ -1,8 +1,6 @@
 #ifndef __SIZE_H_
 #define __SIZE_H_
 
-namespace PrazenUI
-{
 
 class Size
 {
@@ -48,5 +46,4 @@ inline int Size::getHeight() const
     return mHeight;
 }
 
-} // namespace PrazenUI
 #endif /* __SIZE_H_ */

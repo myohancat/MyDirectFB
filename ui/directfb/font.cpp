@@ -3,9 +3,6 @@
 #include "dfb_manager.h"
 #include "log.h"
 
-namespace PrazenUI
-{
-
 Font::Font(const std::string& path, int size)
          : mPath(path),
            mSize(size),
@@ -122,6 +119,3 @@ bool Font::loadFont()
 
     return true;
 }
-
-
-} // namespace PrazenUI

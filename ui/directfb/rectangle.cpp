@@ -1,8 +1,5 @@
 #include "rectangle.h"
 
-namespace PrazenUI
-{
-
 Rectangle::Rectangle()
           : mX(0),
             mY(0),
@@ -135,5 +132,3 @@ bool Rectangle::operator!=(const Rectangle &rect)
     return !(*this == rect);
 }
 
-
-} // namespace PrazenUI

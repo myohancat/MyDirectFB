@@ -5,9 +5,6 @@
 typedef unsigned char u8;
 #endif // u8
 
-namespace PrazenUI
-{
-
 class Color
 {
 public:
@@ -70,7 +67,5 @@ inline void Color::setColor(u8 red, u8 green, u8 blue, u8 alpha)
     mBlue   = blue;
     mAlpha  = alpha;
 }
-
-} // namespace PrazenUI
 
 #endif /* __COLOR_H_ */

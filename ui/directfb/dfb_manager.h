@@ -5,9 +5,6 @@
 #include "log.h"
 #include "size.h"
 
-namespace PrazenUI
-{
-
 class DFBManager
 {
 public:
@@ -29,7 +26,5 @@ private:
     DFBManager();
     ~DFBManager();
 };
-
-} // namespace PrazenUI
 
 #endif /* __DFB_MANAGER_H_ */

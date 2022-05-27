@@ -3,8 +3,6 @@
 #include "dfb_manager.h"
 #include "rectangle.h"
 
-namespace PrazenUI
-{
 
 Image::Image(const std::string& path, bool preload)
           : mDFBSurface(NULL),
@@ -151,5 +149,3 @@ bool Image::loadImage()
 
     return true;
 }
-
-} // namespace PrazenUI

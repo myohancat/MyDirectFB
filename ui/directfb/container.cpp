@@ -4,9 +4,6 @@
 #include "dfb_manager.h"
 #include "log.h"
 
-namespace PrazenUI
-{
-
 static ContainerEvent  gContainerEvent;
 
 ContainerEvent::ContainerEvent()
@@ -466,7 +463,3 @@ int Container::getScreenHeight() const
 
     return mWindow->getScreenHeight();
 }
-
-
-} // namespace PrazenUI
-

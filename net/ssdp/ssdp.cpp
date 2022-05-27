@@ -14,8 +14,8 @@
 #include "trim.h"
 
 #define MAX_PACKET_SIZE    (2*1024)
-#define SERVER_NAME  "Linux/4.19.66-v7, UPnP/1.0 GzAccess/Device"
-#define SERVICE_TYPE "urn:access-greenzonesecu-com:service:gzaccess:1"
+#define SERVER_NAME  "Linux/4.19.66-v7, UPnP/1.0 MyApp/Device" // TODO
+#define SERVICE_TYPE "urn:myocat.iptime.org:my_app:1" // TODO 
 #define CACHE_TIMEOUT 120 // 1800
 
 // TODO MUST IMPLEMENTS HERE

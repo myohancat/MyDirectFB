@@ -5,8 +5,6 @@
 #include "directfb.h"
 #include "size.h"
 
-namespace PrazenUI
-{
 
 class Font
 {
@@ -43,7 +41,5 @@ private:
 
     bool loadFont();
 };
-
-}
 
 #endif /* __FONT_H_ */

@@ -9,9 +9,6 @@
 #include "image.h"
 #include "font.h"
 
-namespace PrazenUI
-{
-
 class Window;
 
 enum
@@ -94,7 +91,5 @@ protected:
     bool init();
     void deinit();
 };
-
-} // namespace PrazenUI
 
 #endif /* __INNO_WINDOW_H_ */
